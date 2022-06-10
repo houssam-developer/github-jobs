@@ -15,9 +15,11 @@ function App() {
 
 	return (
 		<div className="p-2">
-			<h1 className='text-2xl mb-6'><span className='font-semibold'>Github</span> Jobs</h1>
+			<h1 className='text-[#111] text-2xl mb-6'><span className='font-semibold'>Github</span> Jobs</h1>
 			<main>
 				<form>
+
+					{/* container search */}
 					<div className='px-3 py-10 container-search-input rounded-md'>
 						<div className='container-search-input__subcontainer'>
 							<MdWorkOutline className='min-w-[14px]' size={24} />
@@ -25,6 +27,13 @@ function App() {
 							<button className='bg-[#1E86FF] text-xs text-white py-3 px-4 rounded ml-auto' type='submit'>Search</button>
 						</div>
 					</div>
+
+					{/* fullTime */}
+					<div className='p-4 text-sm font-medium flex items-center gap-2'>
+						<input type="checkbox" name="fulltime" id='fulltime' />
+						<label htmlFor="fulltime">Full time</label>
+					</div>
+
 				</form>
 			</main>
 
