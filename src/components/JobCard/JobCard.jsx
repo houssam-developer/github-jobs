@@ -13,9 +13,9 @@ function JobCard(
 
 	}) {
 	return (
-		<article className="p-2 bg-white shadow rounded-md font-['Roboto'] text-[#334680] flex gap-1 sm:gap-2 md:gap-4">
+		<a className="p-2 bg-white shadow rounded-md font-['Roboto'] text-[#334680] cursor-pointer flex gap-1 sm:gap-2 md:gap-4">
 			<div>
-				<img className="max-w-[90px] max-h-auto object-contain rounded-md border-[1px] border-orange-400"
+				<img className="max-w-[90px] max-h-auto object-contain rounded-md "
 					src={`./images/companies/${companyPicture}`} alt="picture of an company" />
 			</div>
 
@@ -36,7 +36,7 @@ function JobCard(
 					</div>
 				</div>
 			</div>
-		</article>
+		</a>
 	)
 }
 
