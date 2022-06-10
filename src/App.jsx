@@ -22,7 +22,7 @@ function App() {
 						<div className='container-search-input__subcontainer'>
 							<MdWorkOutline className='min-w-[14px]' size={24} />
 							<input className='font-[Roboto] font-normal text-xs text-[#334680]' type="text" name="search" placeholder='Title, companies, expert' />
-							<button className='bg-[#1E86FF] text-xs text-white py-3 px-4 rounded' type='submit'>Search</button>
+							<button className='bg-[#1E86FF] text-xs text-white py-3 px-4 rounded ml-auto' type='submit'>Search</button>
 						</div>
 					</div>
 				</form>
