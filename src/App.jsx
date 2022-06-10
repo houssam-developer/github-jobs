@@ -4,6 +4,7 @@ import './App.scss';
 import { apiService } from './services/ApiService';
 import { MdWorkOutline } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
+import JobCard from './components/JobCard/JobCard';
 
 
 function App() {
@@ -68,10 +69,24 @@ function App() {
 							</div>
 						</div>
 
-						<div>
-							{/* Results */}
-
-						</div>
+						{/* Results */}
+						<ul className='p-2 flex flex-col gap-2'>
+							<li>
+								<JobCard />
+							</li>
+							<li>
+								<JobCard />
+							</li>
+							<li>
+								<JobCard />
+							</li>
+							<li>
+								<JobCard />
+							</li>
+							<li>
+								<JobCard />
+							</li>
+						</ul>
 					</div>
 
 
