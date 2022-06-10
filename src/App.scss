@@ -1,0 +1,24 @@
+.container-search-input {
+	background-image: url('./images/backgroundImg.png');
+	background-repeat: no-repeat;
+	background-position: bottom;
+
+
+	&__subcontainer {
+		@apply px-2 py-2 rounded-md text-[#b9bdcf] overflow-x-hidden border-[2px] border-transparent bg-white transition-colors flex items-center gap-1;
+
+		&:focus-within {
+			@apply border-blue-500;
+		}
+
+		& input {
+			border: none;
+			outline: none;
+
+			&:focus {
+				border: none;
+				outline: none;
+			}
+		}
+	}
+}
