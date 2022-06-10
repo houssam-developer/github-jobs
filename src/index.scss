@@ -14,5 +14,15 @@
 }
 
 body {
-	@apply font-sans text-[#334680];
+	@apply font-sans text-[#334680] bg-[#f6f7fb];
+}
+
+input {
+	border: none;
+	outline: none;
+
+	&:focus {
+		border: none;
+		outline: none;
+	}
 }

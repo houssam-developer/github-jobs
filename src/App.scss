@@ -1,24 +1,22 @@
-.container-search-input {
+.container-input-search {
 	background-image: url('./images/backgroundImg.png');
 	background-repeat: no-repeat;
 	background-position: bottom;
 
 
 	&__subcontainer {
-		@apply p-1 rounded-md text-[#b9bdcf] overflow-x-hidden border-[2px] border-transparent bg-white transition-colors flex items-center gap-1;
+		@apply p-1 rounded-md text-[#b9bdcf] overflow-x-hidden border-[1px] border-transparent bg-white transition-colors flex items-center gap-1;
 
 		&:focus-within {
-			@apply border-blue-500;
+			@apply border-[#1E86FF];
 		}
+	}
+}
 
-		& input {
-			border: none;
-			outline: none;
+.container-input-location {
+	@apply p-3 text-[#B9BDCF] text-xs border-[1px] border-transparent bg-white rounded shadow overflow-x-hidden flex items-center gap-3;
 
-			&:focus {
-				border: none;
-				outline: none;
-			}
-		}
+	&:focus-within {
+		@apply border-[#1E86FF];
 	}
 }
