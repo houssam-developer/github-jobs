@@ -18,9 +18,17 @@ export const apiService = (function () {
 			.catch(err => console.error(err));
 	}
 
+
+	function findByCity(city) { }
+	function finByKeyword(keyword) { }
+	function findByCityOrZipCode(city, zipCode) { }
+	function findBySelectedOption(option) { }
+	function findByFulltime() { }
+
 	return {
 		seek
 	}
+
 })();
 
 const apiAdapter = function (data) {

@@ -50,6 +50,7 @@ function App() {
 				<form>
 
 					{/* container search */}
+
 					<div className='px-3 py-10 container-input-search rounded-md'>
 						<div className='container-input-search__subcontainer'>
 							<MdWorkOutline className='min-w-[14px]' size={20} />
