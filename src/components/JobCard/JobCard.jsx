@@ -9,11 +9,13 @@ function JobCard(
 		jobTitle = 'JobTitle',
 		jobTimeType = 'JobTimeType',
 		jobLocation = 'JobCity',
-		jobPostedDays = 'JobDays Ago'
-
+		jobPostedDays = 'JobDays Ago',
+		callModalJob = undefined,
+		id = ''
 	}) {
+
 	return (
-		<a className="p-2 bg-white shadow rounded-md font-['Roboto'] text-[#334680] cursor-pointer flex gap-1 sm:gap-2 md:gap-4">
+		<a onClick={e => callModalJob(e, id)} href="#" className="p-2 bg-white shadow rounded-md font-['Roboto'] text-[#334680] cursor-pointer flex gap-1 sm:gap-2 md:gap-4">
 			<div>
 				<img className="max-w-[90px] max-h-auto object-contain rounded-md "
 					src={`./images/companies/${companyPicture}`} alt="picture of an company" />

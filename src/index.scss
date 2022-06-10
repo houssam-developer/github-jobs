@@ -15,14 +15,28 @@
 
 body {
 	@apply font-sans text-[#334680] bg-[#f6f7fb];
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 input {
+	@apply text-xs font-normal;
+
 	border: none;
 	outline: none;
+	color: #222;
 
 	&:focus {
 		border: none;
 		outline: none;
 	}
+
+	@media screen and (min-width: 500px) {
+		@apply text-sm;
+	}
+
+	@media screen and (min-width: 768px) {
+		@apply text-base;
+	}
+
 }
