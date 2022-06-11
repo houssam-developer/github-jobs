@@ -15,9 +15,8 @@ function App() {
 	const modalJobRef = useRef();
 
 	useEffect(() => {
-		console.log(`🚀 App.init() #useIndex: `, setUseIndex(useIndex + 1));
-
-		//apiService.seek();
+		console.log(`🚀 App.init()`);
+		apiService.seek();
 	}, []);
 
 	function callModalJob(e, jobId) {
