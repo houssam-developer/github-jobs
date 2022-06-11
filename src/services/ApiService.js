@@ -2,26 +2,6 @@ import moment from 'moment';
 import jobsApi from '../data/Jobs.json';
 import { v4 as uuidv4 } from 'uuid';
 
-const countryService = (function makeCountryService() {
-	const API_URL = 'https://restcountries.com/v3.1/all';
-
-	console.log('CountryService.init()');
-
-	function findAll() {
-		try {
-			return fetch(`${API_URL}`)
-				.then(res => res.json())
-				.then(jsonObj => jsonObj);
-		} catch (err) {
-			console.log('fetchCountries() ERROR: ', err);
-		}
-	}
-
-	return {
-		findAll
-	};
-
-})();
 
 export const apiService = (function () {
 

@@ -71,25 +71,25 @@ function App() {
 								<h2 className='p-2 text-[#B9BDCF] text-sm font-bold'>Location</h2>
 								<div className='container-input-location'>
 									<BiWorld className='min-[20px]' size={20} />
-									<input type="text" placeholder='City, state, zip code or country' />
+									<input type="text" placeholder='City, state, zip code' />
 								</div>
 
 								<ul className='p-3 font-medium text-sm'>
-									<li className='p-1 flex items-center gap-2'>
-										<input type="radio" name="city" id="cityOne" />
-										<label htmlFor="cityOne">London</label>
-									</li>
-									<li className='p-1 flex items-center gap-2'>
-										<input type="radio" name="city" id="cityTwo" />
-										<label htmlFor="cityTwo">Amsterdam</label>
-									</li>
 									<li className='p-1 flex items-center gap-2'>
 										<input type="radio" name="city" id="cityThree" />
 										<label htmlFor="cityThree">New York</label>
 									</li>
 									<li className='p-1 flex items-center gap-2'>
+										<input type="radio" name="city" id="cityOne" />
+										<label htmlFor="cityOne">Fremont</label>
+									</li>
+									<li className='p-1 flex items-center gap-2'>
+										<input type="radio" name="city" id="cityTwo" />
+										<label htmlFor="cityTwo">Los Angeles</label>
+									</li>
+									<li className='p-1 flex items-center gap-2'>
 										<input type="radio" name="city" id="cityFour" />
-										<label htmlFor="cityFour">Berlin</label>
+										<label htmlFor="cityFour">Chicago</label>
 									</li>
 								</ul>
 							</div>
