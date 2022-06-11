@@ -4,6 +4,7 @@ import { BiWorld } from "react-icons/bi";
 
 function JobCard(
 	{
+		jobData = {},
 		companyPicture = 'company-picture.png',
 		companyName = 'CompanyName',
 		jobTitle = 'JobTitle',

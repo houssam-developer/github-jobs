@@ -1,18 +1,15 @@
 export const apiService = (function () {
 
 	const options = {
-		method: 'POST',
+		method: 'GET',
 		headers: {
-			'content-type': 'application/json',
-			'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-			'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
-		},
-		body: '{"search_terms":"python programmer","location":"30301","page":"1","fetch_full_text":"yes"}'
+			'X-RapidAPI-Key': 'bd723f2f58msh817878da61885dbp1c82fejsn1e5961989a62',
+			'X-RapidAPI-Host': 'job-search4.p.rapidapi.com'
+		}
 	};
 
-	console.log(`🚀 fetch...`);
 	function seek() {
-		fetch('https://linkedin-jobs-search.p.rapidapi.com/', options)
+		fetch('https://job-search4.p.rapidapi.com/linkedin/search?query=React%20&page=1', options)
 			.then(response => response.json())
 			.then(response => console.log(response))
 			.catch(err => console.error(err));
