@@ -10,18 +10,20 @@ import ModalJob from './components/ModalJob/ModalJob';
 
 function App() {
 	const [useIndex, setUseIndex] = useState(0)
-	const [selectedJobAnnouncement, setSelectedJobAnnouncement] = useState(undefined);
+	const [selectedJob, setSelectedJob] = useState(undefined);
 	const mainContentRef = useRef();
 	const modalJobRef = useRef();
 
 	useEffect(() => {
 		console.log(`🚀 App.init()`);
-		apiService.seek();
+		//apiService.seek();
 	}, []);
 
-	function callModalJob(e, jobId) {
+	function callModalJob(e, job) {
 		e.preventDefault();
-		console.log(`🔥 callModalJob() #jobId: ${jobId}`);
+		console.log(`🔥 callModalJob()`);
+
+		setSelectedJob(job);
 
 		mainContentRef.current.classList.add('hidden');
 		modalJobRef.current.classList.remove('hidden');
@@ -42,7 +44,7 @@ function App() {
 		<div className="p-2 sm:p-4">
 			<h1 className='text-[#111] text-2xl mb-6'><span className='font-semibold'>Github</span> Jobs</h1>
 			<div className='hidden' ref={modalJobRef}>
-				<ModalJob fnBackToSearch={fnBackToSearch} />
+				<ModalJob fnBackToSearch={fnBackToSearch} job={selectedJob} />
 			</div>
 			<main className='' ref={mainContentRef}>
 				<form>
@@ -97,7 +99,7 @@ function App() {
 
 						{/* Results */}
 						<ul className='flex-grow max-w-[790px] p-2 flex flex-col gap-2 md:gap-8'>
-							{[...Array(5).keys()].map(it => <li key={uuidv4()}><JobCard id={uuidv4()} jobData={it} callModalJob={callModalJob} /></li>)}
+							{apiService.seekJobs().map(it => <li key={uuidv4()}><JobCard id={uuidv4()} job={it} callModalJob={callModalJob} /></li>)}
 						</ul>
 					</div>
 				</form>
