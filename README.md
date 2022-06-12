@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://github-jobs-he.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/houssam-developer/github-jobs">
       Solution
     </a>
     <span> | </span>
@@ -37,28 +37,51 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![My Image](img/screenshot-demo.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+My portfolio can be found here: "https://my-portfolio-he.netlify.app/".
+Thanks to that challenge, I learn to work efficiently in order to succeed.
+And I hope to make more beautifuls websites and become an expert in front-end developmemt :)
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- [HTML]
+- [SASS]
+- [CSS] 
+- [React] (https://reactjs.org/)
+- [React-Icons] (https://react-icons.github.io/react-icons/)
+- [UUID] (https://www.npmjs.com/package/uuid)
+- [Vite] (https://vitejs.dev/)
+- [Tailwind] (https://tailwindcss.com/)
+- [MomentJS] (https://momentjs.com/)
+
 
 ## Features
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps) was to build an application to complete the given user stories.
+
+Challenge: Create a job search using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
+
+- User story: I can see a list of jobs in a city by default
+- User story: I can search for jobs with a given keyword
+- User story: I can search for jobs with a city name, zip code, or other location
+- User story: I can select one option from at least 4 pre-defined options
+- User story: I can search for a full-time job only
+- User story: I can see a list of jobs with their logo, company name, location, and posted time.
+- User story: When I select a job, I can see job descriptions and how to apply like the given design.
+- User story: When I am on the job details page, I can go back to the search page
+- User story (optional): I can see a list of jobs in the closest city from my location by default
+- User story (optional): I can see jobs on different pages, 5 items on each page
+
+Icon: https://google.github.io/material-design-icons/
+
+INFOS: API - (https://jobs.github.com/api) is not working since 2019.
+=> I use a fake data (jobs.json) to demonstrate all functionalities.
+
 
 ## How To Use
 
@@ -68,25 +91,29 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/houssam-developer/github-jobs
 
 # Install dependencies
 $ npm install
 
 # Run the app
-$ npm start
+$ npm run dev
 ```
 
 ## Acknowledgements
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
+<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
 
 - [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
 - [Node.js](https://nodejs.org/)
+- [React] (https://reactjs.org/)
+- [React-Icons] (https://react-icons.github.io/react-icons/)
+- [Vite] (https://vitejs.dev/)
+- [Tailwind] (https://tailwindcss.com/)
+- [MomentJS] (https://momentjs.com/)
 - [Marked - a markdown parser](https://github.com/chjj/marked)
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- Website [github-jobs-he.netlify.app/](https://github-jobs-he.netlify.app/)
+- GitHub [@houssam-developer](https://github.com/houssam-developer/github-jobs)
