@@ -59,7 +59,7 @@ function App() {
 				<form onSubmit={handleFormSearchSubmit}>
 					{/* container search */}
 
-					<div style={{ backgroundImage: "url(./images/hero-background.png)" }} className='px-3 py-10 container-input-search rounded-md'>
+					<div style={{ backgroundImage: "url(../images/hero-background.png)" }} className='px-3 py-10 container-input-search rounded-md'>
 						<div className='container-input-search__subcontainer'>
 							<MdWorkOutline className='min-w-[14px]' size={20} />
 							<input className='flex-grow font-[Roboto] text-[#334680]' type="text" name="search" placeholder='Title, companies, expert' />
