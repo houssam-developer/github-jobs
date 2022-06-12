@@ -1,21 +1,12 @@
-import { MdWorkOutline, MdWest, MdAccessTime } from "react-icons/md";
+import { MdWest, MdAccessTime } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
 
 function ModalJob({
-	jobData = {}, fnBackToSearch,
+	fnBackToSearch,
 	emailContact = 'wes@kasisto.com',
 	emailCC_Contact = 'eric@kasisto.com',
-	companyPicture = 'company-picture.png',
-	companyName = 'CompanyName',
-	jobTitle = 'JobTitle',
-	jobTimeType = 'JobTimeType',
-	jobLocation = 'JobCity',
-	jobPostedDays = 'JobDays Ago',
-	jobDescription = '',
 	job = {}
 }) {
-
-	console.log(`🚀 ModalJob.init(): #job: `, job);
 
 	return (
 		<div className='modal-job flex flex-wrap gap-8'>
@@ -41,7 +32,7 @@ function ModalJob({
 				{/* Job Title */}
 				<div className='flex flex-col gap-2'>
 					<h2 className='font-[Roboto] font-bold text-xl sm:text-xl'>{job.title}</h2>
-					<span className="px-[.5em] py-1 text-xs sm:text-sm font-bold border-[1px] border-[#334680] rounded self-start">Full time</span>
+					<span className="px-[.5em] py-1 text-xs sm:text-sm font-bold border-[1px] border-[#334680] rounded self-start">{job.timeType}</span>
 					<div className=" text-xs text-[#B7BCCE] font-medium flex items-center gap-1 ">
 						<MdAccessTime className='min-[18px]' size={18} />
 						<span>{job.postedAt}</span>
@@ -51,7 +42,7 @@ function ModalJob({
 				{/* Company */}
 				<div className='flex items-start gap-3'>
 					<div>
-						<img className='max-w-[42px] rounded-md' src="./images/companies/company-picture.png" alt="picture of company" />
+						<img className='max-w-[80px] rounded-md' src={`./images/companies/${job.companyPicture}`} alt="picture of company" />
 					</div>
 					<div className='flex flex-col gap-2'>
 						<h2 className=" text-sm font-bold">{job.companyName}</h2>

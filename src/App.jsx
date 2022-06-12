@@ -11,17 +11,19 @@ import ModalJob from './components/ModalJob/ModalJob';
 function App() {
 	const [useIndex, setUseIndex] = useState(0)
 	const [selectedJob, setSelectedJob] = useState(undefined);
+	const [jobs, setJobs] = useState([]);
+
 	const mainContentRef = useRef();
 	const modalJobRef = useRef();
 
 	useEffect(() => {
 		console.log(`🚀 App.init()`);
+		setJobs(apiService.seekJobs());
 		//apiService.seek();
 	}, []);
 
 	function callModalJob(e, job) {
 		e.preventDefault();
-		console.log(`🔥 callModalJob()`);
 
 		setSelectedJob(job);
 
@@ -40,6 +42,13 @@ function App() {
 		modalJobRef.current.classList.add('hidden');
 	}
 
+	function handleFormSearchSubmit(e) {
+		e.preventDefault();
+
+		const formData = new FormData(e.currentTarget);
+		setJobs(apiService.seekJobs(formData));
+	}
+
 	return (
 		<div className="p-2 sm:p-4">
 			<h1 className='text-[#111] text-2xl mb-6'><span className='font-semibold'>Github</span> Jobs</h1>
@@ -47,8 +56,7 @@ function App() {
 				<ModalJob fnBackToSearch={fnBackToSearch} job={selectedJob} />
 			</div>
 			<main className='' ref={mainContentRef}>
-				<form>
-
+				<form onSubmit={handleFormSearchSubmit}>
 					{/* container search */}
 
 					<div className='px-3 py-10 container-input-search rounded-md'>
@@ -73,25 +81,25 @@ function App() {
 								<h2 className='p-2 text-[#B9BDCF] text-sm font-bold'>Location</h2>
 								<div className='container-input-location'>
 									<BiWorld className='min-[20px]' size={20} />
-									<input type="text" placeholder='City, state, zip code' />
+									<input type="text" placeholder='City, state' name='location' />
 								</div>
 
 								<ul className='p-3 font-medium text-sm'>
 									<li className='p-1 flex items-center gap-2'>
-										<input type="radio" name="city" id="cityThree" />
+										<input type="radio" name="city" id="cityThree" value='New York' />
 										<label htmlFor="cityThree">New York</label>
 									</li>
 									<li className='p-1 flex items-center gap-2'>
-										<input type="radio" name="city" id="cityOne" />
-										<label htmlFor="cityOne">Fremont</label>
-									</li>
-									<li className='p-1 flex items-center gap-2'>
-										<input type="radio" name="city" id="cityTwo" />
+										<input type="radio" name="city" id="cityTwo" value='Log Angeles' />
 										<label htmlFor="cityTwo">Los Angeles</label>
 									</li>
 									<li className='p-1 flex items-center gap-2'>
-										<input type="radio" name="city" id="cityFour" />
+										<input type="radio" name="city" id="cityFour" value='Chicago' />
 										<label htmlFor="cityFour">Chicago</label>
+									</li>
+									<li className='p-1 flex items-center gap-2'>
+										<input type="radio" name="city" id="cityOne" value='Fremont' />
+										<label htmlFor="cityOne">Fremont</label>
 									</li>
 								</ul>
 							</div>
@@ -99,7 +107,14 @@ function App() {
 
 						{/* Results */}
 						<ul className='flex-grow max-w-[790px] p-2 flex flex-col gap-2 md:gap-8'>
-							{apiService.seekJobs().map(it => <li key={uuidv4()}><JobCard id={uuidv4()} job={it} callModalJob={callModalJob} /></li>)}
+							{
+								jobs.length > 0 ?
+									jobs.map(it => <li key={uuidv4()}><JobCard id={uuidv4()} job={it} callModalJob={callModalJob} /></li>)
+									:
+									<div className='w-full p-2 bg-white shadow rounded-md flex justify-center'>
+										<img className='max-w-[200px] max-h-[200px]' src="./images/no-results.jpg" alt="" />
+									</div>
+							}
 						</ul>
 					</div>
 				</form>

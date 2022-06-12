@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 function makeJob() {
-
 	return {
 		id: '',
 		companyPicture: 'company-picture.png',
@@ -35,7 +34,7 @@ const apiAdapter = (function (data) {
 		job.country = it.country;
 		job.postedAt = parseFromNow(it.date_posted);
 		job.description = it.description
-
+		job.companyPicture = `fake-company-0${Math.floor(Math.random() * 5)}.png`
 		jobs.push(job);
 	});
 
@@ -47,12 +46,10 @@ const apiAdapter = (function (data) {
 		}
 	}
 
-
-	//jobs.forEach(it => console.log('🔁 #it:', it));
-
 	function getJobs() {
 		return jobs;
 	}
+
 
 	return {
 		getJobs
@@ -78,15 +75,54 @@ export const apiService = (function () {
 
 	const jobs = apiAdapter.getJobs();
 
-	function seekJobs() {
-		return jobs;
+	function seekJobs(formData) {
+		if (!formData) { return jobs; }
+
+		let targetJobSearch = {
+			search: '',
+			fulltime: false,
+			location: '',
+			city: ''
+		};
+
+		Array.from(formData.entries()).forEach(it => {
+			if (it[0] === 'search') { targetJobSearch.search = it[1]; }
+			else if (it[0] === 'fulltime') { targetJobSearch.fulltime = true; }
+			else if (it[0] === 'location') { targetJobSearch.location = it[1] }
+			else if (it[0] === 'city') { targetJobSearch.city = it[1] }
+		})
+
+		let jobsFiltered = jobs;
+
+		if (targetJobSearch.search) {
+			const searchVal = targetJobSearch.search.toLowerCase();
+			jobsFiltered = jobs.filter(it => it.title.toLowerCase().includes(searchVal) || it.companyName.toLowerCase().includes(searchVal));
+		}
+
+		if (targetJobSearch.fulltime) { jobsFiltered = jobsFiltered.filter(it => it.timeType === 'Full time'); }
+		else { jobsFiltered = jobsFiltered.filter(it => it.timeType === 'Part time'); }
+
+		if (targetJobSearch.location) {
+			const locationVal = targetJobSearch.location.toLowerCase();
+
+			jobsFiltered = jobsFiltered.filter(it => it.city.toLowerCase() === locationVal || it.state.toLowerCase() === locationVal);
+		}
+
+		if (!targetJobSearch.location || targetJobSearch.city) {
+			const cityVal = targetJobSearch.city.toLowerCase();
+			if (cityVal) {
+				jobsFiltered = jobsFiltered.filter(it => it.city.toLowerCase() === cityVal);
+			}
+		}
+
+		return jobsFiltered;
 	}
 
-	function findByCity(city) { }
-	function finByKeyword(keyword) { }
-	function findByCityOrZipCode(city, zipCode) { }
-	function findBySelectedOption(option) { }
-	function findByFulltime() { }
+	// function findByCity(city) { }
+	// function finByKeyword(keyword) { }
+	// function findByCityOrZipCode(city, zipCode) { }
+	// function findBySelectedOption(option) { }
+	// function findByFulltime() { }
 
 	return {
 		seekJobs

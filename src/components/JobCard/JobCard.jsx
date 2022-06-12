@@ -15,16 +15,18 @@ function JobCard(
 		callModalJob = undefined,
 	}) {
 
-	console.log(`📡 JobCard.init() #job: `, job.title);
+	//console.log(`📡 JobCard.init() #job: `, job.companyPicture);
 
 	return (
 		<a onClick={e => callModalJob(e, job)} href="#" className="p-2 bg-white shadow rounded-md font-['Roboto'] text-[#334680] cursor-pointer flex gap-1 sm:gap-2 md:gap-4">
-			<div>
-				<img className="max-w-[90px] max-h-auto object-contain rounded-md "
-					src={`./images/companies/${companyPicture}`} alt="picture of an company" />
+			<div className="flex-grow min-w-[85px] max-w-[100px]">
+				<div className="container-ratio-1-1  w-full">
+					<img className="child-ratio rounded-md"
+						src={`./images/companies/${job.companyPicture}`} alt="picture of an company" />
+				</div>
 			</div>
 
-			<div className="flex flex-col gap-4">
+			<div className="flex-grow flex flex-col gap-4">
 				<div className="flex flex-col gap-2">
 					<h3 className=" text-xs font-bold">{job.companyName}</h3>
 					<p className="text-xs sm:text-sm md:text-base">{job.title}</p>
