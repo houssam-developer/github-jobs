@@ -79,7 +79,7 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 
 Icon: https://google.github.io/material-design-icons/
 
-INFOS: API - (https://jobs.github.com/api) is not working since 2019.
+:triangular_flag_on_post: INFOS: API - (https://jobs.github.com/api) is not working since 2019.
 => I use a fake data (jobs.json) to demonstrate all functionalities.
 
 
